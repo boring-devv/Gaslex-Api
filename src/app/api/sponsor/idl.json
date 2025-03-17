@@ -1,0 +1,61 @@
+{
+  "address": "6gqFSm25JRQrvYo2u1YfhtFKhphwSN6WmctdUEuHzj8Q",
+  "metadata": {
+    "name": "sonic_pay",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "sponsor_gas",
+      "discriminator": [
+        90,
+        14,
+        0,
+        28,
+        211,
+        170,
+        114,
+        143
+      ],
+      "accounts": [
+        {
+          "name": "user",
+          "writable": true
+        },
+        {
+          "name": "relayer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "gas_amount",
+          "type": "u64"
+        },
+        {
+          "name": "engagement_proof",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidProof",
+      "msg": "Invalid engagement proof."
+    }
+  ]
+}
